@@ -1,0 +1,24 @@
+.dantal-banner{
+    background-image: url(../images/5-top-dental-hygiene-tools-to-use-at-home_orig.jpg);
+    height: 80vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    background-attachment: scroll;
+    background-blend-mode: overlay;
+}
+.title{
+    color:#ffff;
+    font-weight: 900;
+    font-size: 48px;
+}
+.sub-title{
+    color: #ffff;
+    font-size: 38px;
+}
+.service-title{
+    color:goldenrod;
+    font-weight: 900;
+    font-size: 48px;
+}
