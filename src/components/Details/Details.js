@@ -20,14 +20,16 @@ const Details = () => {
 
     }
     return (
-        <div className="text-center extra-style mb-5 mt-5 w-50 m-auto p-4">
+       <div className="container p-2">
+            <div className="text-center extra-style mb-5 mt-5 p-2  m-auto">
             <h1>{detail?.name}</h1>
-            <img className="img-fluid p-5 " src={detail?.photo} alt="" />
+            <img className="img-fluid " src={detail?.photo} alt="" />
             <p>Contract Number {detail?.id}</p>
             <p>{detail?.description}</p>
 
-            <button onClick={buttonHandlar} className="btn btn-primary">Confrom Appiontment</button>
+            <button onClick={buttonHandlar} className="btn p-2 btn-primary">Confrom Appiontment</button>
         </div>
+       </div>
     );
 };
 

@@ -4,7 +4,7 @@ import {
 import Home from './components/Home/Home';
 import Noservice from './components/Noservice/Noservice';
 import Dentist from './components/Dentists/Dentist';
-import Appoinment from './components/Appoinment/Appoinment';
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Details from './components/Details/Details';
@@ -31,15 +31,13 @@ function App() {
              <PrivateRoute path="/service/:code">
                <Details></Details>
              </PrivateRoute>
-             <Route exact path="/enroll/:num">
+             <Route path="/enroll/:num">
                 <Enrolling></Enrolling>
                </Route>
              <Route path="/dantists">
                <Dentist></Dentist>
              </Route>
-             <Route path="/appointment">
-               <Appoinment></Appoinment>
-             </Route>
+             
              <Route path="/complite">
                <Success></Success>
               </Route>
