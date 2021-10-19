@@ -14,7 +14,6 @@ const Service = (props) => {
             <img className="img-fluid" src={photo} alt="" />
             <h4>{name}</h4>
             <p>{title}</p>
-            
             <button onClick={detailHandlar} className="btn btn-primary text-center ">Details</button>
           
         </div>

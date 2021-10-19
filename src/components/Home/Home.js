@@ -31,7 +31,10 @@ const Home = () => {
                 <h2 className="service-title mt-5 mb-5 " id="service">Our Best Service</h2>
                 <div className="d-flex row mb-5">
               {
-                services.slice(0,6).map(service=><Service service={service}></Service>)
+                services.slice(0,6).map(service=><Service
+                     key={service.id}
+                     service={service}
+                     ></Service>)
               }
             </div>
             
@@ -41,7 +44,10 @@ const Home = () => {
                 <h2 className="service-title mt-5 mb-5" id="dantists">Our Dentists</h2>
                 <div className="d-flex row  mb-5">
               {
-                 services.slice(7,13).map(doctor=><Dentist doctor={doctor}></Dentist>)
+                 services.slice(7,13).map(doctor=><Dentist
+                     key={doctor.id}
+                     doctor={doctor}
+                     ></Dentist>)
               }
                </div>
             

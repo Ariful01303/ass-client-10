@@ -11,6 +11,7 @@ import Details from './components/Details/Details';
 import Enrolling from './components/Enrolling/Enrolling';
 import Success from './components/Success/Success';
 import Login from './components/Login/Login';
+import PrivateRoute from'./components/PrivateRout/PrivateRoute';
 import AuthProvider from './components/Authcontext/AuthProvider';
 
 
@@ -27,9 +28,9 @@ function App() {
              <Route path="/home">
             <Home></Home>
              </Route>
-             <Route path="/service/:code">
+             <PrivateRoute path="/service/:code">
                <Details></Details>
-             </Route>
+             </PrivateRoute>
              <Route exact path="/enroll/:num">
                 <Enrolling></Enrolling>
                </Route>

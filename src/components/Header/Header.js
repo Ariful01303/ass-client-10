@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Button, ButtonGroup, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../Hooks/useAuth';
@@ -24,7 +24,7 @@ const Header = () => {
      {user?.email? <Button onClick={logOut} variant="danger">LogOut</Button>:
       <Nav.Link as ={Link} to="/login">login</Nav.Link>}
 
-     { user?.email?<Navbar.Text>Signed in as: <img className="header-photo" src={user?.photoURL} alt="" /></Navbar.Text>
+     { user?.email?<Navbar.Text>Signed in as: {user?.photoURL?<img className="header-photo" src={user?.photoURL} alt="" />:<p className="col-title"> {user?.email}</p>}</Navbar.Text>
       :<p className="col-title">Please Login</p>}
     </Navbar.Collapse>
    

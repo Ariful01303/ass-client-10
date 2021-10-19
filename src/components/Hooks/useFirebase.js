@@ -1,19 +1,19 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut,createUserWithEmailAndPassword,
+    signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import firebaseInit from "../StartFirebase/firebase.init";
 firebaseInit()
 const useFirebase=()=>{
     const auth = getAuth();
     const [user,setUser]=useState({});
-    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true)
+   
     const singInGoogle=()=>{
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-        .then((result) => {
-                 setUser(result.user)
-                 setError(" ")
-        })
-        .catch((error) => setError(error.message));
+            return signInWithPopup(auth, googleProvider)
+            .finally(() => { setLoading(false) });
+        
+       
        }
 
 
@@ -27,6 +27,7 @@ const useFirebase=()=>{
           } else {
             
           }
+          setLoading(false);
         });
         return ()=>unSubscrived;
       }, []);
@@ -35,21 +36,33 @@ const useFirebase=()=>{
 
 
       const logOut=()=>{
+        setLoading(true);
         signOut(auth)
         .then(() => {
           setUser({});
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .finally(() => setLoading(false))
     }
-
+         
+    const handleUserRegister = (email, password) => {
+           return createUserWithEmailAndPassword(auth, email, password)
+        .finally(() => { setLoading(false) });
+      };
+    
+      const handleUserLogin = (email, password) => {
+          return signInWithEmailAndPassword(auth, email, password)
+          .finally(() => { setLoading(false) });
+          
+      };
 
 
         return {
             user,
             singInGoogle,
-            logOut
+            logOut,
+            loading,
+            handleUserLogin,
+            handleUserRegister
 
         }
       
