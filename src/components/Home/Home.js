@@ -29,7 +29,7 @@ const Home = () => {
             <div className="container">
             <div>
                 <h2 className="service-title mt-5 mb-5 " id="service">Our Best Service</h2>
-                <div className="d-flex row mb-5">
+                <div className="d-flex row mb-5 p-4">
               {
                 services.slice(0,6).map(service=><Service
                      key={service.id}
@@ -42,7 +42,7 @@ const Home = () => {
           
            <div>
                 <h2 className="service-title mt-5 mb-5" id="dantists">Our Dentists</h2>
-                <div className="d-flex row  mb-5">
+                <div className="d-flex row p-4  mb-5">
               {
                  services.slice(7,13).map(doctor=><Dentist
                      key={doctor.id}
