@@ -6,6 +6,9 @@
   
   
 }
+.extra{
+    transition: 1s;
+}
 .extra-style:hover{
     background: rgba(0, 0, 0, 0.726);
     color: #ffff;

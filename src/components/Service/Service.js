@@ -10,12 +10,14 @@ const Service = (props) => {
     }
     return (
         
-            <div className="col-lg-4 col-md-6 col-sm-12 col-12 extra-style p-5">
+            <div className="col-lg-4 col-md-6 col-sm-12 col-12 extra-style extra p-5">
             <img className="img-fluid" src={photo} alt="" />
-            <h4>{name}</h4>
+           <div className="p-2">
+           <h4>{name}</h4>
             <p>{title}</p>
             <button onClick={detailHandlar} className="btn btn-primary text-center ">Details</button>
           
+           </div>
         </div>
     );
 };
