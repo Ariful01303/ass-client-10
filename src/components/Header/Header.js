@@ -26,7 +26,8 @@ const Header = () => {
      {user?.email? <Button onClick={logOut} variant="danger">LogOut</Button>:
       <Nav.Link as ={Link} to="/login">login</Nav.Link>}
 
-     { user?.email?<Navbar.Text>Signed in as: {user?.photoURL?<img className="header-photo" src={user?.photoURL} alt="" />:<p className="col-title"> {user?.email}</p>}</Navbar.Text>
+     { user?.email?<Navbar.Text className="d-flex ms-5"><p className="col-title">{user?.displayName} </p> {user?.photoURL?<img className="header-photo" src={user?.photoURL} alt="" />:<p className="col-title"> {user?.email}</p>}
+      </Navbar.Text>
       :<p className="col-title">Please Login</p>}
     </Navbar.Collapse>
    
