@@ -98,7 +98,7 @@ const Footer = () => {
 
   <div className="text-center copyright p-3">
     © 2020 Copyright:
-    <a className="text-white" href="/#">LearnAndEarn.com</a>
+    <a className="text-white" href="/#">Dental_Care.com</a>
   </div>
  
 </footer>

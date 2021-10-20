@@ -4,7 +4,6 @@ import {
 import Home from './components/Home/Home';
 import Noservice from './components/Noservice/Noservice';
 import Dentist from './components/Dentists/Dentist';
-
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Details from './components/Details/Details';
