@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useAuth from '../Hooks/useAuth';
 import url from '../images/login.jpg';
 import { useHistory,useLocation} from 'react-router-dom';
+import './Login.css'
 
 const Login = () => {
     const {singInGoogle,user,logOut, handleUserRegister,handleUserLogin}=useAuth()
@@ -25,7 +26,6 @@ const Login = () => {
       
     };
   
-   
   
     const handleRegister = () => {
       if (password.length < 6) {
@@ -40,19 +40,26 @@ const Login = () => {
       handleUserRegister(email, password)
       .then((result) => {
         history.push(redirectUrl)
+        setError('');
        })
        .catch(error => {
-        setError(error.message);
+        setError("This Email are registered try to login");
       })
     };
   
     const handleLogin = () => {
+      if (password.length < 6) {
+        setError('Password Must be at least 6 characters long.')
+        return;
+      }
+      
       handleUserLogin(email, password)
       .then((result) => {
         history.push(redirectUrl)
+        setError('');
        })
        .catch(error => {
-        setError(error.message);
+        setError("please enter correct password or email");
       })
     };
   
@@ -60,15 +67,16 @@ const Login = () => {
         singInGoogle()
         .then(result=>{
            history.push(redirectUrl);
+           setError('');
         })
         .catch(error => {
           setError(error.message);
         })
     }
     return (
-        <div className="div d-flex container mt-5 mb-5 justify-content-center align-items-center">
-        <div className="row ">
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div className="div d-flex container   mt-5 mb-5 justify-content-center align-items-center">
+        <div className="row p-2">
+          <div className="col-lg-6 p-2  login-side  col-md-6 col-sm-12 col-12">
             <div>
               <div className="form-input mt-5">
                 <input
