@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Home from './components/Home/Home';
 import Noservice from './components/Noservice/Noservice';
-import Dentist from './components/Dentists/Dentist';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Details from './components/Details/Details';
@@ -12,6 +11,8 @@ import Success from './components/Success/Success';
 import Login from './components/Login/Login';
 import PrivateRoute from'./components/PrivateRout/PrivateRoute';
 import AuthProvider from './components/Authcontext/AuthProvider';
+import DentistDoctor from './components/DentistDoctor/DentistDoctor';
+import About from './components/About/About';
 
 
 function App() {
@@ -33,10 +34,13 @@ function App() {
              <Route path="/enroll/:num">
                 <Enrolling></Enrolling>
                </Route>
+               
              <Route path="/dantists">
-               <Dentist></Dentist>
+               <DentistDoctor></DentistDoctor>
              </Route>
-             
+             <Route path="/about">
+               <About></About>
+             </Route>
              <Route path="/complite">
                <Success></Success>
               </Route>
