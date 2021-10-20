@@ -32,8 +32,8 @@ const Login = () => {
         setError('Password Must be at least 6 characters long.')
         return;
       }
-      if  (!/(?=.*[A-Z].*[a-z]*[1-9])/.test(password)) {
-        setError('Please insert hard Password like (Number,upper-low case)');
+      if  (!/(?=.*[^A-Za-z0-9_])/.test(password)) {
+        setError('Please insert hard Password like (special characters)');
         return;
       }
       
