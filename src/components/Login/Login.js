@@ -29,7 +29,7 @@ const Login = () => {
   
     const handleRegister = () => {
       if (password.length < 6) {
-        setError('Password Must be at least 6 characters long.')
+        setError('Password Must be at least 6 characters long')
         return;
       }
       if  (!/(?=.*[^A-Za-z0-9_])/.test(password)) {
@@ -70,7 +70,7 @@ const Login = () => {
            setError('');
         })
         .catch(error => {
-          setError(error.message);
+          setError("something is wrong");
         })
     }
     return (
